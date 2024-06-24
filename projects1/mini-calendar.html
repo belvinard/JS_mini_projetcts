@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calendar using JavaScript - BP WEP SERVICES</title>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Link to external CSS file for additional styling -->
+    <link rel="stylesheet" href="mini-calendar.css">
+</head>
+<body>
+    <!-- Hero section -->
+    <div class="hero">
+        <!-- Calendar section -->
+        <div class="calendar">
+            <!-- Left section of the calendar displaying date and day -->
+            <div class="left">
+                <!-- Paragraph to display the date -->
+                <p id="date">05</p>
+                <!-- Paragraph to display the day -->
+                <p id="day">Thursday</p>
+            </div>
+            <!-- Right section of the calendar displaying month and year -->
+            <div class="right">
+                <!-- Paragraph to display the month -->
+                <p id="month">June</p>
+                <!-- Paragraph to display the year -->
+                <p id="year">2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript code to dynamically update calendar content -->
+    <script>
+        // Selecting HTML elements by their IDs
+        const date = document.getElementById("date");
+        const day = document.getElementById("day");
+        const month = document.getElementById("month");
+        const year = document.getElementById("year");
+
+        // Creating a new Date object to get the current date
+        const today = new Date();
+
+        // Arrays to store names of week days and months
+        const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const allMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+        // Updating the content of HTML elements with current date information
+        date.innerHTML = (today.getDate() < 10 ? "0" : "") + today.getDate();
+        day.innerHTML = weekDays[today.getDay()];
+        month.innerHTML = allMonths[today.getMonth()];
+        year.innerHTML = today.getFullYear();
+
+        
+    </script>
+
+</body>
+</html>
+
