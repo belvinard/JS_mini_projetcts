@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <button class="button">Increment counter </button>
+    <p>Counter value : <span id="counterValue">0</span></p>
+
+    <script>
+        let button = document.querySelector('.button');
+        let counter = parseInt(localStorage.getItem('counterValue')) || 0;
+
+        
+        button.addEventListener('click', () =>{
+            counter++;
+            localStorage.setItem('counterValue', counter);
+            updateUI();
+        });
+
+        function updateUI(){
+            document.getElementById('counterValue').textContent = counter;
+        }
+
+
+        // Initial UI update
+        updateUI();
+    </script>
+</body>
+</html>
